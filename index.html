@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial 2026 - Información Oficial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        :root {
+            --primary-color: #0066b3;
+            --secondary-color: #e31937;
+            --accent-color: #ffd700;
+            --dark-color: #0a1a2d;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f0f4f8;
+            background-image: linear-gradient(to bottom right, #f0f4f8, #e6eef7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--primary-color), #004d8c);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-card h3 i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .info-card p {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+
+        .highlight {
+            background-color: rgba(0, 102, 179, 0.1);
+            padding: 0.8rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+            margin: 1.5rem 0;
+        }
+
+        .highlight strong {
+            color: var(--primary-color);
+        }
+
+        /* QR Section */
+        .qr-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .qr-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .qr-section p {
+            color: var(--gray-color);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .qr-code {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eaeaea;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrcode {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        .qr-image {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #eee;
+        }
+
+        .qr-instructions {
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .qr-instructions h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .qr-instructions ol {
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-instructions li {
+            margin-bottom: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .share-btn i {
+            font-size: 1.2rem;
+        }
+
+        .share-btn.whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background-color: #1DA1F2;
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background-color: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            margin: 0 0.5rem;
+        }
+
+        .action-btn.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .action-btn.secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .qr-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .qr-instructions {
+                text-align: center;
+            }
+            
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .action-btn {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <h1>MUNDIAL 2026</h1>
+            </div>
+            <p class="subtitle">La Copa Mundial de la FIFA 2026 se jugará en Estados Unidos, Canadá y México. Será la primera vez que 48 equipos participen en el torneo.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Información del Mundial -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-calendar-alt"></i> Fechas Clave</h3>
+                <p>El Mundial 2026 se celebrará del <strong>11 de junio al 19 de julio de 2026</strong>, con un total de 104 partidos en 16 ciudades sedes.</p>
+                <div class="highlight">
+                    <p><strong>Fase de grupos:</strong> 11-26 de junio, 2026</p>
+                    <p><strong>Octavos de final:</strong> 27-30 de junio, 2026</p>
+                    <p><strong>Final:</strong> 19 de julio, 2026 en el Estadio MetLife, Nueva Jersey</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Sedes del Torneo</h3>
+                <p>Por primera vez en la historia, tres países albergarán conjuntamente el torneo:</p>
+                <div class="highlight">
+                    <p><strong>Estados Unidos:</strong> 11 ciudades (Nueva York, Los Ángeles, Dallas, etc.)</p>
+                    <p><strong>Canadá:</strong> 2 ciudades (Toronto y Vancouver)</p>
+                    <p><strong>México:</strong> 3 ciudades (Ciudad de México, Guadalajara y Monterrey)</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fas fa-trophy"></i> Formato del Torneo</h3>
+                <p>El Mundial 2026 será el primero con 48 equipos (frente a los 32 anteriores).</p>
+                <div class="highlight">
+                    <p><strong>Fase de grupos:</strong> 12 grupos de 4 equipos cada uno</p>
+                    <p><strong>Clasificación:</strong> Los 2 primeros de cada grupo y los 8 mejores terceros pasan a octavos</p>
+                    <p><strong>Partidos:</strong> 80 partidos en fase de grupos, 24 en eliminatorias</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección QR -->
+        <section class="qr-section">
+            <h2>Comparte esta información</h2>
+            <p>Genera un código QR para compartir esta página con información del Mundial 2026 con amigos, familiares o compañeros de trabajo.</p>
+            
+            <div class="qr-container">
+                <div class="qr-code">
+                    <div id="qrcode">
+                        <!-- El código QR aparecerá aquí -->
+                        <img id="qr-image" class="qr-image" src="" alt="Código QR del Mundial 2026">
+                        <p id="qr-placeholder" style="color: var(--gray-color); text-align: center; display: none;">
+                            <i class="fas fa-qrcode" style="font-size: 3rem; margin-bottom: 10px; color: #ddd;"></i><br>
+                            El código QR aparecerá aquí
+                        </p>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray-color);">Escanea este código para acceder a la página</p>
+                </div>
+                
+                <div class="qr-instructions">
+                    <h3>¿Cómo usar el código QR?</h3>
+                    <ol>
+                        <li>Genera el código QR usando el botón "Generar QR"</li>
+                        <li>Guarda la imagen o compártela directamente</li>
+                        <li>Para escanear, usa la cámara de tu teléfono o una app de QR</li>
+                        <li>El código te llevará directamente a esta página</li>
+                    </ol>
+                    
+                    <div class="share-buttons">
+                        <button class="share-btn whatsapp" id="whatsapp-share">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-btn twitter" id="twitter-share">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </button>
+                        <button class="share-btn facebook" id="facebook-share">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <button id="generate-qr" class="action-btn primary">
+                    <i class="fas fa-qrcode"></i> Generar Código QR
+                </button>
+                <button id="download-qr" class="action-btn secondary">
+                    <i class="fas fa-download"></i> Descargar QR
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-futbol"></i>
+            </div>
+            <p>Página informativa no oficial sobre la Copa Mundial de la FIFA 2026</p>
+            <p>© 2023 - Información actualizada regularmente</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Esta página es un proyecto educativo y no está afiliada a la FIFA</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const generateBtn = document.getElementById('generate-qr');
+            const downloadBtn = document.getElementById('download-qr');
+            const qrImage = document.getElementById('qr-image');
+            const qrPlaceholder = document.getElementById('qr-placeholder');
+            const pageUrl = window.location.href;
+            
+            // Usar la API de Google Charts para generar QR (funciona sin bibliotecas externas)
+            function generateQRCode() {
+                // Ocultar placeholder y mostrar imagen
+                qrPlaceholder.style.display = 'none';
+                qrImage.style.display = 'block';
+                
+                // URL para la API de Google Charts para generar QR
+                const qrUrl = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(pageUrl)}&choe=UTF-8&chld=L|0`;
+                
+                // Establecer la imagen del QR
+                qrImage.src = qrUrl;
+                qrImage.alt = "Código QR para la página del Mundial 2026";
+                
+                // Mostrar mensaje de éxito
+                showMessage('QR generado correctamente', 'success');
+                
+                // Habilitar botón de descarga
+                downloadBtn.disabled = false;
+            }
+            
+            // Función para descargar el QR
+            function downloadQRCode() {
+                if (!qrImage.src) {
+                    showMessage('Primero genera un código QR', 'error');
+                    return;
+                }
+                
+                // Crear un canvas temporal para la descarga
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                
+                img.crossOrigin = 'Anonymous';
+                img.onload = function() {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Crear enlace de descarga
+                    const link = document.createElement('a');
+                    link.download = 'mundial-2026-qr.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    
+                    showMessage('QR descargado correctamente', 'success');
+                };
+                
+                img.onerror = function() {
+                    showMessage('Error al cargar la imagen QR', 'error');
+                };
+                
+                img.src = qrImage.src;
+            }
+            
+            // Función para mostrar mensajes
+            function showMessage(message, type) {
+                // Remover mensajes anteriores
+                const existingMsg = document.querySelector('.message-alert');
+                if (existingMsg) {
+                    existingMsg.remove();
+                }
+                
+                // Crear nuevo mensaje
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'message-alert';
+                msgDiv.textContent = message;
+                
+                // Estilos del mensaje
+                msgDiv.style.position = 'fixed';
+                msgDiv.style.top = '20px';
+                msgDiv.style.right = '20px';
+                msgDiv.style.padding = '15px 20px';
+                msgDiv.style.borderRadius = '8px';
+                msgDiv.style.zIndex = '1000';
+                msgDiv.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+                msgDiv.style.fontWeight = '600';
+                msgDiv.style.transition = 'all 0.3s ease';
+                
+                if (type === 'success') {
+                    msgDiv.style.background = '#25D366';
+                    msgDiv.style.color = 'white';
+                } else {
+                    msgDiv.style.background = '#e31937';
+                    msgDiv.style.color = 'white';
+                }
+                
+                // Agregar icono
+                const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+                msgDiv.innerHTML = `<i class="fas ${icon}"></i> ${message}`;
+                
+                document.body.appendChild(msgDiv);
+                
+                // Remover mensaje después de 3 segundos
+                setTimeout(() => {
+                    if (msgDiv.parentNode) {
+                        msgDiv.style.opacity = '0';
+                        msgDiv.style.transform = 'translateX(100px)';
+                        setTimeout(() => {
+                            if (msgDiv.parentNode) {
+                                msgDiv.remove();
+                            }
+                        }, 300);
+                    }
+                }, 3000);
+            }
+            
+            // Evento para generar código QR
+            generateBtn.addEventListener('click', generateQRCode);
+            
+            // Evento para descargar código QR
+            downloadBtn.addEventListener('click', downloadQRCode);
+            
+            // Compartir en WhatsApp
+            document.getElementById('whatsapp-share').addEventListener('click', function() {
+                const text = 'Mira esta información sobre el Mundial 2026: ';
+                window.open(`https://wa.me/?text=${encodeURIComponent(text + pageUrl)}`, '_blank');
+            });
+            
+            // Compartir en Twitter
+            document.getElementById('twitter-share').addEventListener('click', function() {
+                const text = 'Información completa sobre el Mundial 2026 - ';
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`, '_blank');
+            });
+            
+            // Compartir en Facebook
+            document.getElementById('facebook-share').addEventListener('click', function() {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`, '_blank');
+            });
+            
+            // Efecto de aparición para las tarjetas
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+            
+            // Generar QR automáticamente al cargar la página
+            setTimeout(generateQRCode, 500);
+        });
+    </script>
+</body>
+</html>
